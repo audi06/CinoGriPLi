@@ -4,7 +4,7 @@ SECTION = "misc"
 PRIORITY = "optional"
 LICENSE = "Proprietary"
 
-LIC_FILES_CHKSUM = "file://LICENSE;md5=a1bfef3c92c1bc8f96d90adbc85dfc69"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=858b014508205322d36421a11207867c"
 
 inherit gitpkgv allarch
 
