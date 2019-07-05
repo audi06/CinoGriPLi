@@ -18,13 +18,15 @@
     <font name="LCD" filename="lcd.ttf" scale="100" />
     <font name="Console" filename="tuxtxt.ttf" scale="100" />
     <font name="Fixed" filename="andale.ttf" scale="100" />
-    <alias name="ChoiceList" font="Regular" size="28" height="40" />
-    <alias name="FileList" font="Regular" size="28" height="38" />
-    <alias name="FileListMulti" font="Regular" size="28" height="38" />
+    <alias name="ChoiceList" font="Regular" size="28" height="50" />
+    <alias name="Body" font="Regular" size="28" height="50" />
+    <alias name="TextNormal" font="Regular" size="28" height="50" />
+    <alias name="FileList" font="Regular" size="28" height="50" />
+    <alias name="FileListMulti" font="Regular" size="28" height="50" />
     <alias name="PluginBrowser0" font="Regular" size="32" height="76" />
     <alias name="PluginBrowser1" font="Regular" size="22" />
     <alias name="ServiceInfo" font="Regular" size="30" height="45" />
-    <alias name="SelectionList" font="Regular" size="28" height="30" />
+    <alias name="SelectionList" font="Regular" size="28" height="50" />
     <alias name="PartnerBoxEntryList0" font="Regular" size="28" height="38" />
     <alias name="PartnerBoxEntryList1" font="Regular" size="28" />
     <alias name="PartnerBoxE2TimerMenu0" font="Regular" size="32" height="114" />
@@ -39,10 +41,11 @@
     <alias name="HelpMenuList" font="Regular" size="30" height="45" />
     <alias name="HelpMenuListExt0" font="Regular" size="32" height="75" />
     <alias name="HelpMenuListExt1" font="Regular" size="28" />
-    <alias name="Dreamexplorer" font="Regular" size="30" height="45" />
-    <alias name="PlayList" font="Regular" size="28" height="38" />
-    <alias name="FallbackReceiverList0" font="Regular" size="28" height="38" />
-    <alias name="FallbackReceiverList1" font="Regular" size="28" />
+    <alias name="Dreamexplorer" font="Regular" size="28" height="38" />
+    <alias name="PlayList" font="Regular" size="28" height="50" />
+    <alias name="fstabMenuList" font="Regular" size="28" height="50" />
+    <alias name="PiconManagerList" font="Regular" size="28" height="50" />
+    <alias name="RSList" font="Regular" size="28" height="50" />
   </fonts>
   <!-- Colors -->
   <colors>
@@ -50,8 +53,8 @@
     <color name="Antique Gold" value="#00ddc488" />
     <color name="AntiqueWhite3" value="#00cdc0b0" />
     <color name="Aquamarine2" value="#0063c7a6" />
-    <color name="background" value="#100f0f0f" />
-    <color name="background1" value="#040f0f14" />
+    <color name="background" value="#10080808" />
+    <color name="background1" value="#00000000" />
     <color name="basictemplatecolor" value="#00000020" />
     <color name="bbbbbf" value="#00b3b3b3" />
     <color name="bbeyaz" value="#00d1d1d1" />
@@ -76,7 +79,7 @@
     <color name="DarkSlateGray2" value="#008deeee" />
     <color name="fallback" value="#00b0b0c0" />
     <color name="ffffff" value="#00ffffff" />
-    <color name="foreground" value="#00f0f0f0" />
+    <color name="foreground" value="#00ffffff" />
     <color name="green" value="#0056c856" />
     <color name="greentransparent" value="#08004c00" />
     <color name="grey" value="#00b6b6b6" />
@@ -122,10 +125,13 @@
     <color name="transpBlack" value="#54111112" />
     <color name="transpDark" value="#54242424" />
     <color name="transpWhite" value="#70f0f0f0" />
-    <color name="trBlack" value="#060f0f0f" />
+    <color name="trBlack" value="#05050505" />
     <color name="Turquoise" value="#0042bdb0" />
+    <color name="un00ffff" value="#0000ffff" />
     <color name="un0bf300" value="#000bf300" />
     <color name="un151515" value="#08151515" />
+    <color name="un1a1a1a" value="#001a1a1a" />
+    <color name="un1f1f1f" value="#001f1f1f" />
     <color name="un232323" value="#00232323" />
     <color name="un25062748" value="#25062748" />
     <color name="un254f7497" value="#254f7497" />
@@ -162,11 +168,57 @@
     <color name="yellowtransparent" value="#084b4b00" />
   </colors>
   <parameters>
+    <parameter name="ConfigListSeperator" value="320" />
+    <parameter name="ChoicelistDash" value="2,6,1000,48" />
+    <parameter name="ChoicelistName" value="68,6,1000,48" />
+    <parameter name="ChoicelistIcon" value="6,6,54,38" />
     <parameter name="FallbackReceiverListName" value="8,2,225,38" />
     <parameter name="FallbackReceiverListIP" value="300,2,225,38" />
-    <parameter name="ChoicelistDash" value="0,4,1000,48" />
-    <parameter name="ChoicelistName" value="68,4,1000,48" />
-    <parameter name="ChoicelistIcon" value="8,0,54,38" />
+    <parameter name="FileListName" value="68,4,1000,50" />
+    <parameter name="FileListIcon" value="7,4,52,50" />
+    <parameter name="FileListMultiName" value="125,3,1000,50" />
+    <parameter name="FileListMultiIcon" value="55, 0, 50, 50" />
+    <parameter name="FileListMultiLock" value="5,5,50,50" />
+    <parameter name="PluginBrowserName" value="180,8,38" />
+    <parameter name="PluginBrowserDescr" value="180,42,25" />
+    <parameter name="PluginBrowserIcon" value="15,8,150,60" />
+    <parameter name="PluginBrowserDownloadName" value="120,8,38" />
+    <parameter name="PluginBrowserDownloadDescr" value="120,42,25" />
+    <parameter name="PluginBrowserDownloadIcon" value="15,0,90,76" />
+    <parameter name="ServiceInfo" value="0,0,450,50" />
+    <parameter name="ServiceInfoLeft" value="0,0,450,45" />
+    <parameter name="ServiceInfoRight" value="450,0,1000,45" />
+    <parameter name="SelectionListDescr" value="55, 3, 1000, 50" />
+    <parameter name="SelectionListLock" value="10, 7, 50, 50" />
+    <parameter name="VirtualKeyboard" value="68, 68" />
+    <parameter name="PartnerBoxEntryListName" value="8, 2, 225, 38" />
+    <parameter name="PartnerBoxEntryListIP" value="180, 2, 225, 38" />
+    <parameter name="PartnerBoxEntryListPort" value="405, 2, 150, 38" />
+    <parameter name="PartnerBoxEntryListType" value="615, 2, 150, 38" />
+    <parameter name="PartnerBoxTimerServicename" value="0, 0, 45" />
+    <parameter name="PartnerBoxTimerName" value="0, 42, 30" />
+    <parameter name="PartnerBoxE1TimerTime" value="0, 78, 255, 30" />
+    <parameter name="PartnerBoxE1TimerState" value="255, 78, 255, 30" />
+    <parameter name="PartnerBoxE2TimerTime" value="0, 78, 225, 30" />
+    <parameter name="PartnerBoxE2TimerState" value="225, 78, 225, 30" />
+    <parameter name="PartnerBoxE2TimerIcon" value="735, 8, 60, 60" />
+    <parameter name="PartnerBoxBouquetListName" value="0, 0, 45" />
+    <parameter name="PartnerBoxChannelListName" value="0, 0, 45" />
+    <parameter name="PartnerBoxChannelListTitle" value="0, 42, 30" />
+    <parameter name="PartnerBoxChannelListTime" value="0, 78, 225, 30" />
+    <parameter name="HelpMenuListHlp" value="0, 0, 900, 42" />
+    <parameter name="HelpMenuListExtHlp0" value="0, 0, 900, 39" />
+    <parameter name="HelpMenuListExtHlp1" value="0, 42, 900, 30" />
+    <parameter name="AboutHddSplit" value="1" />
+    <parameter name="DreamexplorerName" value="62, 0, 1200, 38" />
+    <parameter name="DreamexplorerIcon" value="15, 4, 30, 30" />
+    <parameter name="PicturePlayerThumb" value="30, 285, 45, 300, 30, 25" />
+    <parameter name="PlayListName" value="65,2,1000,50" />
+    <parameter name="PlayListIcon" value="10,0,50,50" />
+    <parameter name="fstabMenuList" value="0,10,300,50,400,10,500,50" />
+    <parameter name="PiconManagerList" value="10,0,1920,50" />
+    <parameter name="RSList" value="40,0,1200,50,10,12,50,50" />
+    <parameter name="HotkeySetupSelectIcon" value="15,0,90,76" />
   </parameters>
   <switchpixmap>
     <pixmap name="menu_on" filename="CinoGriPLi/icons/menu_on.png" />
@@ -180,7 +232,7 @@
     <color name="ListboxBackground" color="background" />
     <color name="ListboxForeground" color="unffffff" />
     <color name="ListboxSelectedBackground" color="un151515" />
-    <color name="ListboxSelectedForeground" color="selectedFG" />
+    <color name="ListboxSelectedForeground" color="un00ffff" />
     <color name="ListboxMarkedBackground" color="un40a0aa0" />
     <color name="ListboxMarkedForeground" color="red" />
     <color name="ListboxMarkedAndSelectedBackground" color="un4a00a0a" />
@@ -213,6 +265,7 @@
   <!-- JobView -->
   <screen name="JobView" position="fill" title="Job View" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="job_name" render="Label" position="780,105" size="1110,52" font="Regular;37" />
     <widget source="job_task" render="Label" position="780,282" size="1110,45" font="Regular;36" />
     <widget source="job_progress" render="Progress" position="780,390" size="1110,54" borderWidth="2" backgroundColor="un254f7497" />
@@ -242,7 +295,7 @@
   </screen>
   <!-- InfoBars -->
   <screen name="InfoBar" title="InfoBar" position="fill" backgroundColor="transparent" flags="wfNoBorder">
-    <ePixmap alphatest="off" pixmap="CinoGriPLi/infobar/hd.png" position="0,778" size="1920,300" zPosition="-1" />
+    <ePixmap alphatest="off" pixmap="CinoGriPLi/infobar/hd.png" position="0,788" size="1920,300" zPosition="-1" />
     <panel name="InfoBarTemplate" />
   </screen>
   <screen name="SecondInfoBar" title="Second InfoBar" position="fill" flags="wfNoBorder">
@@ -271,9 +324,6 @@
     </widget>
     <widget source="session.Event_Next" render="Label" position="985,280" size="915,560" font="Regular;30" halign="block" zPosition="1" transparent="1">
       <convert type="EventName">FullDescription</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" borderWidth="2" position="985,860" size="915,34" backgroundColor="secondBG" transparent="1" zPosition="1" foregroundColor="bbbbbf" font="Regular; 28" valign="center" halign="right">
-      <convert type="CryptoInfo">VerboseInfo</convert>
     </widget>
     <panel name="InfoBarTemplate" />
     <eLabel position="955,140" size="3,710" foregroundColor="darkgreyy" zPosition="3" backgroundColor="darkgreyy" />
@@ -379,8 +429,8 @@
   <screen name="ChannelSelection" title="Channel Selection" position="fill" flags="wfNoBorder">
     <panel name="SelectionTemplate" />
     <panel name="KeyMenuInfoTemplate" />
-    <widget name="list" position="780,108" size="1130,900" itemHeight="45" transparent="1" serviceNumberFont="Regular;31" scrollbarMode="showOnDemand" serviceInfoFont="Regular;29" serviceNameFont="Regular;31" serviceItemHeight="45" picServiceEventProgressbar="CinoGriPLi/window/chprogress.png" progressbarHeight="15" progressBarWidth="60" progressPercentWidth="80" colorEventProgressbarBorder="un33333a" fieldMargins="15" nonplayableMargins="15" colorEventProgressbarBorderSelected="darkgrey" colorServiceDescription="#ebc8a0" foregroundColorEventSelected="unffffff" progressbarBorderWidth="0" foregroundColorServiceNotAvail="#notavailable" backgroundColorMarked="#656565" colorServiceDescriptionFallback="selectedFG" colorServiceDescriptionSelectedFallback="unffffff" colorFallbackItem="#aaaaaa" colorServiceSelectedFallback="selectedFG" />
-	<ePixmap pixmap="CinoGriPLi/infobar/scroll.png" position="1888,108" size="26,900" zPosition="4" alphatest="blend" />
+    <widget name="list" position="780,108" size="1130,900" itemHeight="45" transparent="1" serviceNumberFont="Regular;31" scrollbarMode="showOnDemand" serviceInfoFont="Regular;29" serviceNameFont="Regular;31" serviceItemHeight="50" picServiceEventProgressbar="CinoGriPLi/window/chprogress.png" progressbarHeight="14" progressBarWidth="60" progressPercentWidth="80" colorEventProgressbarBorder="un33333a" fieldMargins="14" nonplayableMargins="14" colorEventProgressbarBorderSelected="darkgrey" colorServiceDescription="#a4c400" foregroundColorEventSelected="unffffff" progressbarBorderWidth="0" foregroundColorServiceNotAvail="#notavailable" backgroundColorMarked="#656565" colorServiceDescriptionFallback="selectedFG" colorServiceDescriptionSelectedFallback="unffffff" colorFallbackItem="#aaaaaa" colorServiceSelectedFallback="selectedFG" />
+    <ePixmap pixmap="CinoGriPLi/infobar/scroll.png" position="1888,108" size="26,900" zPosition="4" alphatest="blend" />
     <widget source="ServiceEvent" render="Label" position="10,535" size="540,34" foregroundColor="Thistle3" font="Regular; 27" valign="center" halign="center" transparent="1" zPosition="1" backgroundColor="black">
       <convert type="cnServiceName">%O  %s  %F %p %Y %f %M %b</convert>
     </widget>
@@ -395,7 +445,7 @@
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
-    <widget source="ServiceEvent" render="cnRunningText" position="15,652" size="742,280" options="movetype=running,startpoint=0,direction=top,steptime=60,repeat=2,startdelay=15000,wrap" transparent="1" font="Regular;30" halign="left">
+    <widget source="ServiceEvent" render="cnRunningText" position="15,652" size="742,280" foregroundColor="bbeyaz" backgroundColor="background" options="movetype=running,startpoint=0,direction=top,steptime=60,repeat=2,startdelay=15000,wrap" transparent="1" font="Regular;30" halign="left">
       <convert type="cnNameExtra">ExtendedDescription</convert>
     </widget>
     <widget source="ServiceEvent" render="NextEpgInfo" position="15,945" size="740,64" transparent="1" font="Regular;28" noWrap="1" NumberOfItems="2" noLabel="1" foregroundColor="yellowsoft" timeColor="green" numOfSpaces="2" />
@@ -403,6 +453,7 @@
       <convert type="ServiceName">Reference</convert>
     </widget>
     <ePixmap pixmap="CinoGriPLi/infobar/frame.png" position="568,529" size="184,110" alphatest="blend" />
+    <eLabel name="" position="8,937" size="750,2" backgroundColor="un1a1a1a" foregroundColor="un1a1a1a" />
   </screen>
   <!-- Simple channelselection -->
   <screen name="SimpleChannelSelection" position="fill" title="Channel Selection" flags="wfNoBorder">
@@ -573,35 +624,44 @@
   <screen name="GraphMultiEpgSetup" position="fill" title="Electronic Program Guide Setup" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <panel name="CancelOKTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="SelectBouquet" position="fill" title="Choose bouquet" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="menu" position="780,100" size="1110,912" itemHeight="45" font="Regular;36" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Menus -->
   <screen flags="wfNoBorder" name="Menu" position="fill">
     <panel name="MenuTemplate" />
+    <panel name="Weather" />
   </screen>
   <screen flags="wfNoBorder" name="menu_mainmenu" position="fill">
     <panel name="MenuTemplate" />
+    <panel name="Weather" />
   </screen>
   <screen flags="wfNoBorder" name="MenuSort" position="fill">
     <panel name="MenuTemplate" />
+    <panel name="Weather" />
     <ePixmap pixmap="skin_default/buttons/key_prev.png" alphatest="blend" position="30,1034" size="52,38" />
     <ePixmap pixmap="skin_default/buttons/key_next.png" alphatest="blend" position="82,1034" size="52,38" />
   </screen>
   <screen flags="wfNoBorder" name="menu_setup" position="fill">
     <panel name="MenuTemplate" />
+    <panel name="Weather" />
   </screen>
   <screen flags="wfNoBorder" name="menu_system" position="fill">
     <panel name="MenuTemplate" />
+    <panel name="Weather" />
   </screen>
   <screen flags="wfNoBorder" name="menu_information" position="fill">
     <panel name="MenuTemplate" />
+    <panel name="Weather" />
   </screen>
   <screen flags="wfNoBorder" name="menu_scan" position="fill">
     <panel name="MenuTemplate" />
+    <panel name="Weather" />
   </screen>
   <!--Setup Configs -->
   <screen name="Setup" title="Setup" position="fill" flags="wfNoBorder">
@@ -614,12 +674,14 @@
   <!-- Scan setup -->
   <screen name="ScanSetup" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
     <widget name="introduction" position="0,0" size="0,0" />
   </screen>
   <!-- Scan simple -->
   <screen name="ScanSimple" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,798" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
     <widget name="footer" position="0,0" size="0,0" />
   </screen>
@@ -651,6 +713,7 @@
   <!-- FastScan -->
   <screen name="FastScanScreen" title="Fast Scan" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,600" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
     <widget name="introduction" position="780,975" size="1110,37" font="Regular;33" halign="center" />
   </screen>
@@ -663,11 +726,13 @@
   <!-- RecordPathSettings -->
   <screen name="RecordPathsSettings" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Softcam Setup -->
   <screen name="SoftcamSetup" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,125" size="1110,150" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
     <widget name="info" position="780,300" size="1110,637" font="Fixed;27" />
   </screen>
@@ -675,6 +740,7 @@
   <screen name="ChoiceBox" title="" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <panel name="TextTemplate" />
+    <panel name="Weather" />
     <widget name="list" position="780,100" size="1110,912" scrollbarMode="showOnDemand" />
   </screen>
   <!-- SelectImage -->
@@ -720,6 +786,7 @@
   <!--CI Config Menu -->
   <screen name="CIconfigMenu" title="CI Assignment" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="CAidList_desc" render="Label" position="825,180" size="990,45" backgroundColor="background" transparent="1" font="Regular;36" />
     <eLabel position="825,238" size="990,3" backgroundColor="black" />
     <eLabel position="825,241" size="990,3" backgroundColor="grey" />
@@ -908,16 +975,16 @@
       <convert type="ServiceTime">StartTime</convert>
       <convert type="ClockToText">ShortDate</convert>
     </widget>
-    <widget source="Service" render="Label" position="382,560" size="367,37" zPosition="1" foregroundColor="hellgreen" font="Regular;30" halign="right">
+    <widget source="Service" render="Label" position="382,560" size="367,37" zPosition="1" foregroundColor="uneeeeee" font="Regular;30" halign="right" transparent="1">
       <convert type="MovieInfo">RecordServiceName</convert>
     </widget>
     <widget name="waitingtext" position="780,100" size="1110,912" font="Regular; 26" halign="center" valign="center" zPosition="4" />
     <widget name="chosenletter" position="780,100" size="1110,912" foregroundColor="yellow" font="Regular; 110" halign="center" valign="center" transparent="1" zPosition="4" />
     <widget name="list" position="780,108" size="1110,900" scrollbarMode="showOnDemand" itemHeights="100,75,45" fontSizesOriginal="32,22,20" fontSizesCompact="32,24" fontSizesMinimal="30,26" pbarShift="17" pbarHeight="20" pbarLargeWidth="72" spaceRight="3" columnsOriginal="270,300" columnsCompactDescription="240,220,240" compactColumn="300" treeDescription="250" partIconeShiftMinimal="8" partIconeShiftCompact="2" partIconeShiftOriginal="3" iconsWidth="33" spaceIconeText="6" trashShift="4" dirShift="3" />
-    <widget source="Service" render="Label" position="30,602" size="720,72" foregroundColor="secondFG" font="Regular;30" transparent="1">
+    <widget source="Service" render="Label" position="30,602" size="720,72" foregroundColor="Bisque2" font="Regular;30" transparent="1">
       <convert type="MovieInfo">ShortDescription</convert>
     </widget>
-    <widget source="Service" render="Label" position="30,680" size="720,288" font="Regular;31" valign="center" halign="block">
+    <widget source="Service" render="Label" position="30,680" size="720,288" font="Regular;31" valign="center" halign="block" transparent="1">
       <convert type="MovieInfo">MetaDescription</convert>
     </widget>
     <widget source="Service" render="Label" position="30,980" size="180,36" transparent="1" foregroundColor="cyan2" font="Regular;30">
@@ -947,6 +1014,7 @@
   <!-- Audio and subtitle selection -->
   <screen flags="wfNoBorder" name="AudioSelection" position="fill" title="Audio">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="900,105" size="990,180" itemHeight="45" font="Regular;32" scrollbarMode="showOnDemand" />
     <widget source="key_red" render="Pixmap" pixmap="CinoGriPLi/buttons/red.png" position="810,110" size="34,34" alphatest="on">
       <convert type="ConditionalShowHide" />
@@ -960,7 +1028,7 @@
     <widget source="key_blue" render="Pixmap" pixmap="CinoGriPLi/buttons/blue.png" position="810,245" size="34,34" alphatest="on">
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget source="streams" render="Listbox" scrollbarMode="showOnDemand" position="810,300" size="1080,562" zPosition="3" transparent="1">
+    <widget source="streams" render="Listbox" scrollbarMode="showOnDemand" position="810,350" size="1080,562" zPosition="3" transparent="1">
       <convert type="TemplatedMultiContent">
 				{"templates":
 					{"default": (37, [
@@ -983,10 +1051,12 @@
 				}
 			</convert>
     </widget>
+    <eLabel position="800,315" size="1105,2" foregroundColor="un1f1f1f" backgroundColor="un1f1f1f" />
   </screen>
   <!-- ChannelContextMenu -->
   <screen name="ChannelContextMenu" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="menu" position="780,100" size="1110,912" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Minute input -->
@@ -998,12 +1068,14 @@
   <!-- MovieContextMenu -->
   <screen name="MovieContextMenu" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <eLabel text="Movielist menu" position="30,7" size="1830,75" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;36" valign="center" halign="left" />
     <widget name="menu" position="780,100" size="1110,912" scrollbarMode="showOnDemand" />
   </screen>
   <!-- MovieBrowserConfig -->
   <screen name="MovieBrowserConfiguration" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <eLabel text="Movie list configuration" position="30,7" size="1830,75" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;36" valign="center" halign="left" />
     <widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
@@ -1015,6 +1087,7 @@
   <!-- Timers -->
   <screen name="TimerEntry" position="fill" title="Timer entry" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,765" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="TimerEditList" position="fill" title="Timer Overview" flags="wfNoBorder">
@@ -1025,11 +1098,13 @@
   </screen>
   <screen name="TimerLog" position="fill" title="Timer log" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="loglist" position="780,105" size="1110,836" itemHeight="38" scrollbarMode="showOnDemand" font="Regular;32" />
-    <widget name="logentry" position="300,975" size="1590,35" font="Regular;32" halign="center" />
+    <widget name="logentry" position="780,966" size="1110,35" font="Regular;32" halign="center" />
   </screen>
   <screen name="TimerSanityConflict" position="fill" title="Timer sanity error" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="key_red" position="780,110" size="34,34" render="Pixmap" pixmap="CinoGriPLi/buttons/red.png" alphatest="on" />
     <widget name="key_red" position="840,110" size="370,40" backgroundColor="black" zPosition="1" transparent="1" font="Regular;34" halign="left" />
     <widget source="key_green" position="1350,110" size="34,34" render="Pixmap" pixmap="CinoGriPLi/buttons/green.png" alphatest="on" />
@@ -1044,10 +1119,12 @@
   </screen>
   <screen name="TimerSelection" position="fill" title="Timer selection" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="timerlist" position="780,100" size="1110,912" scrollbarMode="showOnDemand" itemHeight="76" rowSplit="42" setEventNameFont="Regular;32" setServiceNameFont="Regular;28" setFont="Regular;28" satPosLeft="250" />
   </screen>
   <screen name="PluginBrowser" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <ePixmap pixmap="skin_default/buttons/key_prev.png" alphatest="blend" position="30,1034" size="52,38" />
     <ePixmap pixmap="skin_default/buttons/key_next.png" alphatest="blend" position="82,1034" size="52,38" />
     <ePixmap pixmap="skin_default/buttons/key_0.png" alphatest="blend" position="135,1034" size="52,38" />
@@ -1055,20 +1132,23 @@
   </screen>
   <screen name="PluginDownloadBrowser" title="Downloadable plugins" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="text" position="780,105" size="1110,75" zPosition="-1" transparent="1" font="Regular;32" valign="center" halign="center" />
     <widget name="list" position="780,100" size="1110,912" zPosition="3" transparent="0" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="FileBrowser" title="DVD File Browser" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="filelist" position="780,100" size="1110,912" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="ServiceInfoSimple" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="infolist" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" selectionDisabled="1" />
   </screen>
   <screen name="ServiceInfo" position="fill" flags="wfNoBorder">
     <panel name="ServiceInfoSimple" />
-    <widget source="session.CurrentService" render="Label" position="300,975" size="1590,40" transparent="1" zPosition="1" foregroundColor="foreground" font="Regular;33" valign="top" halign="center">
+    <widget source="session.CurrentService" render="Label" position="800,968" size="1100,40" transparent="1" zPosition="2" foregroundColor="un58bcff" font="Regular;33" valign="top" halign="center" noWrap="1">
       <convert type="ServiceInfo">HasHBBTV</convert>
     </widget>
   </screen>
@@ -1080,21 +1160,25 @@
   </screen>
   <screen name="BackupScreen" title="Backup is running" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="BackupSelection" title="Select files/folders to backup" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="checkList" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" backgroundColor="background" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Ipkg installer -->
   <screen name="IpkgInstaller" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <eLabel text="Install extensions" position="30,7" size="1830,75" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;36" valign="center" halign="left" />
     <widget name="list" position="780,100" size="1110,798" itemHeight="38" font="Regular;28" backgroundColor="background" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
     <widget source="introduction" render="Label" position="780,975" size="1110,40" backgroundColor="background" zPosition="1" transparent="1" foregroundColor="white" font="Regular;33" halign="center" />
   </screen>
   <screen name="Ipkg" title="Installing Software" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="package" position="780,110" size="1110,38" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
     <widget name="status" position="780,163" size="1110,70" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
     <widget name="slider" position="780,440" size="1110,20" zPosition="2" transparent="1" />
@@ -1103,16 +1187,19 @@
   <!-- Choose upgrade source -->
   <screen name="IPKGMenu" title="Select IPKG source" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="filelist" position="780,105" size="1110,450" itemHeight="38" font="Regular;28" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Edit upgrade source -->
   <screen name="IPKGSource" title="IPKG source" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
-    <widget name="text" position="30,570" size="1860,45" font="Regular;34" zPosition="3" transparent="1" />
+    <panel name="Weather" />
+    <widget name="text" position="790,570" size="1100,80" font="Regular;34" zPosition="3" transparent="1" foregroundColor="unc8eaff" />
   </screen>
   <!-- Packet Manager -->
   <screen name="PacketManager" title="IPKG upgrade" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="list" render="Listbox" position="780,105" size="1110,858" zPosition="3" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 		{"template": [
@@ -1129,6 +1216,7 @@
   </screen>
   <screen name="UpdatePlugin" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="package" render="Label" position="780,110" size="1110,38" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
     <widget source="status" render="Label" position="780,163" size="1110,70" backgroundColor="darkgrey" transparent="1" font="Regular;32" />
     <widget name="slider" position="780,440" size="1110,20" zPosition="2" transparent="1" />
@@ -1160,6 +1248,7 @@
   </screen>
   <screen name="PluginManager" title="Plugin manager" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="list" render="Listbox" position="780,105" size="1110,825" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 				{"templates":
@@ -1184,6 +1273,7 @@
   </screen>
   <screen name="PluginManagerInfo" title="Plugin manager activity" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="list" render="Listbox" position="780,105" size="1110,787" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -1200,6 +1290,7 @@
   </screen>
   <screen name="PluginManagerHelp" title="Plugin manager help" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="list" render="Listbox" position="780,105" size="1110,787" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -1216,6 +1307,7 @@
   </screen>
   <screen name="PluginDetails" position="fill" title="Plugin Details" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="statuspic" position="1306,952" size="48,48" alphatest="on" />
     <widget source="author" render="Label" position="780,105" size="1100,45" zPosition="10" font="Regular;28" backgroundColor="background" transparent="1" />
     <widget name="detailtext" position="780,200" size="1100,350" font="Regular;28" backgroundColor="background" transparent="1" />
@@ -1225,11 +1317,13 @@
   <!-- Restore screen -->
   <screen name="RestoreScreen" title="Restore is running" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Restore -->
   <screen name="RestoreMenu" title="Restore Backups" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="filelist" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" backgroundColor="darkgrey" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Extra margin for wizard, never know how bad the TV is... -->
@@ -1368,6 +1462,7 @@
   </screen>
   <screen name="AdapterSetupConfiguration" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="menulist" position="780,105" size="1110,456" itemHeight="38" font="Regular;28" zPosition="10" scrollbarMode="showOnDemand" />
     <widget source="description" render="Label" position="780,547" size="1110,300" transparent="1" font="Regular;31" valign="center" halign="center" />
     <widget source="IFtext" render="Label" position="1270,880" size="247,37" transparent="1" zPosition="10" font="Regular;31" halign="right" />
@@ -1378,6 +1473,7 @@
   <screen name="AdapterSetup" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <panel name="KeyTextTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,418" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
     <widget source="introduction" render="Label" position="780,619" size="1110,40" font="Regular;33" halign="center" />
     <widget source="IPtext" render="Label" position="780,675" size="225,37" zPosition="1" foregroundColor="grey" font="Regular;31" halign="left" />
@@ -1398,11 +1494,13 @@
   </screen>
   <screen name="NameserverSetup" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,646" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
     <widget source="introduction" render="Label" position="780,975" size="1110,36" transparent="1" zPosition="10" font="Regular;30" valign="center" halign="center" />
   </screen>
   <screen name="NetworkAdapterSelection" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="list" render="Listbox" position="780,105" size="1110,420" zPosition="10" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -1420,6 +1518,7 @@
   </screen>
   <screen name="NetworkAdapterTest" title="Network test" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="InfoText" position="780,105" size="1100,455" zPosition="25" font="Regular;31" />
     <widget name="InfoTextBorder" position="780,108" size="1110,525" />
     <widget name="Adaptertext" position="780,689" size="300,37" zPosition="1" foregroundColors="#8c8c93,#1cff1c" font="Regular;31" halign="left" />
@@ -1452,6 +1551,7 @@
   </screen>
   <screen name="NetworkBrowser" title="Network Neighbourhood" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="list" render="Listbox" position="780,105" size="1110,858" zPosition="10" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 		{"template": [
@@ -1471,6 +1571,7 @@
   </screen>
   <screen name="AutoMountManager" title="MountManager" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="config" render="Listbox" position="780,105" size="1110,720" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -1487,6 +1588,7 @@
   </screen>
   <screen name="UserManager" title="UserManager" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="config" render="Listbox" position="780,105" size="1110,630" zPosition="3" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -1502,6 +1604,7 @@
   </screen>
   <screen name="AutoMountView" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="legend1" render="Label" position="780,105" size="300,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="left" />
     <widget source="legend2" render="Label" position="1080,105" size="525,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="center" />
     <widget source="legend3" render="Label" position="1590,105" size="300,75" transparent="1" zPosition="1" font="Regular;27" valign="center" halign="right" />
@@ -1525,6 +1628,7 @@
   <screen name="AutoMountEdit" title="MountEdit" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <panel name="VKeyIconPanel" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,412" itemHeight="38" font="Regular;28" backgroundColor="darkgrey" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
     <widget name="HelpWindow" position="960,600" size="1,1" zPosition="1" transparent="1" alphatest="on" />
     <widget source="introduction" render="Label" position="780,975" size="1110,36" backgroundColor="darkgrey" shadowColor="black" shadowOffset="-2,-2" zPosition="1" transparent="1" font="Regular;30" halign="center" />
@@ -1532,17 +1636,20 @@
   <screen name="UserDialog" position="fill" title="UserDialog" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <panel name="VKeyIconPanel" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,412" itemHeight="38" font="Regular;28" backgroundColor="darkgrey" zPosition="3" transparent="1" scrollbarMode="showOnDemand" />
     <widget name="HelpWindow" position="960,600" size="1,1" zPosition="1" transparent="1" alphatest="on" />
     <widget source="introduction" render="Label" position="780,975" size="1110,36" backgroundColor="darkgrey" shadowColor="black" shadowOffset="-2,-2" zPosition="1" transparent="1" font="Regular;30" halign="center" />
   </screen>
   <screen name="ScanIP" position="fill" title="Scan IP" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,38" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
   </screen>
   <!-- WirelessLan -->
   <screen name="WlanStatus" position="fill" title="Wireless Network State" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="LabelBSSID" render="Label" position="885,120" size="300,37" valign="left" font="Regular;30" transparent="1" foregroundColor="white" />
     <widget source="LabelESSID" render="Label" position="885,225" size="300,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
     <widget source="LabelQuality" render="Label" position="885,285" size="300,37" valign="center" font="Regular;30" transparent="1" foregroundColor="white" />
@@ -1562,6 +1669,7 @@
   </screen>
   <screen name="WlanScan" position="fill" title="Choose a Wireless Network" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="list" render="Listbox" position="780,105" size="1110,525" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 		{"template": [
@@ -1581,6 +1689,7 @@
   <!-- Input Device Configuration -->
   <screen name="InputDeviceSelection" title="Select input device" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="list" render="Listbox" position="780,105" size="1110,720" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
         <!-- device, description, devicepng, divpng -->
@@ -1597,17 +1706,20 @@
   </screen>
   <screen name="InputDeviceSetup" title="Input device setup" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
     <widget source="introduction" render="Label" position="780,975" size="1110,36" backgroundColor="darkgrey" shadowColor="black" shadowOffset="-2,-2" zPosition="1" transparent="1" font="Regular;30" halign="center" />
   </screen>
   <!-- Harddisk selection -->
   <screen name="HarddiskSelection" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="hddlist" position="780,100" itemHeight="38" font="Regular;28" size="1110,912" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Harddisk setup -->
   <screen name="HarddiskSetup" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="model" position="780,105" size="1110,42" font="Regular;36" />
     <widget name="capacity" position="780,210" size="1110,42" font="Regular;36" />
     <widget name="bus" position="780,260" size="1110,42" font="Regular;36" />
@@ -1615,6 +1727,7 @@
   <!-- Help -->
   <screen name="HelpMenu" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="list" position="780,100" size="855,912" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
     <widget name="rc" position="1659,105" size="231,750" zPosition="10" pixmaps="skin_default/rc.png,skin_default/rcold.png" alphatest="on" />
     <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-150,-150" size="55,105" zPosition="11" alphatest="on" />
@@ -1636,10 +1749,12 @@
   </screen>
   <screen flags="wfNoBorder" name="File" position="fill" title="PPanel File">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="progress" position="30,1024" size="1860,6" pixmap="CinoGriPLi/window/slider100.png" transparent="1" />
   </screen>
   <screen flags="wfNoBorder" name="Tarball" position="fill" title="PPanel Entry">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="progress" position="30,1024" size="1860,6" pixmap="CinoGriPLi/window/slider100.png" transparent="1" />
   </screen>
   <screen flags="wfNoBorder" name="Execute" position="fill" title="PPanel Entry">
@@ -1650,6 +1765,7 @@
   <screen name="TextBox" title="Message" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <panel name="KeyExit" />
+    <panel name="Weather" />
     <widget name="text" position="780,105" size="1110,910" font="Regular;32" />
     <eLabel text="Leave message" position="251,1030" size="370,38" backgroundColor="secondBG" font="Regular;34" halign="left" transparent="1" zPosition="1" />
   </screen>
@@ -1721,11 +1837,13 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <screen name="TimeDateInput" title="Time/Date Input" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <panel name="CancelOKTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Language selection -->
   <screen name="LanguageSelection" title="Language selection" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="languages" render="Listbox" position="780,99" size="1110,918" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 	{"template": [
@@ -1749,6 +1867,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <screen name="NimSelection" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <panel name="KeyInfoTemplate" />
+    <panel name="Weather" />
     <widget source="nimlist" render="Listbox" position="780,100" size="1110,912" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 			{"template": [
@@ -1802,23 +1921,27 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <!-- Positioner Setup Log -->
   <screen name="PositionerSetupLog" position="fill" title="Positioner Setup Log">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="list" font="Console;30" position="780,107" size="1110,910" />
   </screen>
   <!-- Select Sats Entry -->
   <screen name="SelectSatsEntryScreen" position="fill" title="Select satellites">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="list" position="780,105" size="1110,810" scrollbarMode="showOnDemand" />
     <widget name="hint" position="780,975" size="1110,36" font="Regular;30" halign="center" />
   </screen>
   <!-- Tuner Screen -->
   <screen name="TunerScreen" position="fill" title="Tune">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,532" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
     <widget name="introduction" position="780,705" size="1110,36" font="Regular;30" />
   </screen>
   <!-- Rotor Nim Selection -->
   <screen name="RotorNimSelection" position="fill" title="select Slot">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="nimlist" position="795,105" size="1110,150" />
   </screen>
   <!-- Satfinder -->
@@ -1862,16 +1985,17 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   </screen>
   <screen name="SatNimSelection" title="Select Tuner" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="nimlist" position="780,105" size="1080,900" />
   </screen>
   <!--Media-Player-->
   <screen name="MediaPlayer" title="MediaPlayer" position="fill" flags="wfNoBorder">
     <panel name="BasicTemplate" />
     <eLabel position="30,93" size="922,39" backgroundColor="grey" zPosition="5" text="F i l e l i s t" foregroundColor="black" font="Regular;33" halign="center" />
-    <widget name="filelist" position="30,135" size="922,610" backgroundColor="noTransBG" scrollbarMode="showOnDemand" />
+    <widget name="filelist" position="30,140" size="922,604" backgroundColor="noTransBG" scrollbarMode="showOnDemand" />
     <eLabel position="967,93" size="922,39" backgroundColor="grey" zPosition="5" text="P l a y l i s t" foregroundColor="black" font="Regular;33" halign="center" />
-    <widget name="playlist" position="967,135" size="922,610" backgroundColor="noTransBG" selectionDisabled="1" scrollbarMode="showOnDemand" />
-    <widget name="title" position="200,765" size="1520,60" backgroundColor="noTransBG" transparent="1" font="Regular;39" valign="top" halign="center" />
+    <widget name="playlist" position="967,140" size="922,604" backgroundColor="noTransBG" selectionDisabled="1" scrollbarMode="showOnDemand" />
+    <widget name="title" position="200,765" size="1520,60" backgroundColor="noTransBG" transparent="1" font="Regular;39" valign="top" halign="center" foregroundColor="Magenta" />
     <eLabel position="190,817" size="1540,3" backgroundColor="darkgrey" />
     <widget name="titletext" position="200,832" size="150,37" font="Regular;30" backgroundColor="noTransBG" transparent="1" foregroundColor="darkgrey" valign="top" />
     <widget name="currenttext" position="350,832" size="1200,37" font="Regular;30" backgroundColor="noTransBG" transparent="1" foregroundColor="darkgrey" valign="top" />
@@ -1898,6 +2022,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <!-- About -->
   <screen name="About" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="AboutScrollLabel" font="Regular;28" position="780,100" size="1110,912" zPosition="2" split="1" dividechar=":" colposition="0" />
   </screen>
   <!-- Memory Info -->
@@ -1930,18 +2055,21 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <!-- Translation Info -->
   <screen flags="wfNoBorder" name="TranslationInfo" position="fill">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="TranslatorName" render="Label" position="780,110" size="1110,120" font="Regular;28" halign="center" backgroundColor="background" transparent="1" />
     <widget source="TranslationInfo" render="Label" position="780,270" size="1110,570" font="Regular;28" halign="center" backgroundColor="background" transparent="1" />
   </screen>
   <!-- Streaming Clients Info -->
   <screen name="StreamingClientsInfo" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="menu" font="Regular;28" itemHeight="38" position="780,100" size="1110,912" zPosition="1" />
     <widget name="info" position="780,100" size="1110,38" font="Regular;28" halign="center" transparent="1" zPosition="2" />
   </screen>
   <!-- Virtual Keyboard -->
   <screen name="VirtualKeyBoard" position="fill" zPosition="99" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <ePixmap pixmap="CinoGriPLi/skin_default/vkey_text.png" position="927,235" size="816,78" zPosition="-4" alphatest="on" />
     <widget name="header" position="930,120" size="810,39" transparent="1" noWrap="1" font="Regular;33" valign="top" />
     <widget name="text" position="930,255" size="804,51" transparent="1" noWrap="1" font="Regular;38" valign="center" halign="right" />
@@ -1994,6 +2122,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <screen name="Config" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <panel name="KeyMenuTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,300" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
     <widget name="statusbar" position="780,495" size="1110,38" font="Regular;32" />
     <widget name="status" position="780,540" size="1110,410" font="Console;20" />
@@ -2008,6 +2137,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   </screen>
   <screen name="Pic_Exif" title="Info" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget source="menu" render="Listbox" position="780,105" size="1110,892" selectionDisabled="1" transparent="1" scrollbarMode="showOnDemand">
       <convert type="TemplatedMultiContent">
 				{"template": [MultiContentEntryText(pos = (7,10),size = (375,45),flags = RT_HALIGN_LEFT,text = 0),
@@ -2019,6 +2149,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   </screen>
   <screen name="Pic_Setup" title="Settings" position="fill" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,100" size="1110,912" itemHeight="38" font="Regular;28" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
   <screen name="Pic_Full_View" position="fill" title="Picture" flags="wfNoBorder">
@@ -2031,6 +2162,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <!-- Inputbox -->
   <screen name="InputBox" position="fill" title="Input" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="text" position="780,105" size="1110,39" font="Regular;33" />
     <ePixmap pixmap="skin_default/vkey_text.png" position="927,210" size="816,78" zPosition="-4" alphatest="on" />
     <widget name="input" position="932,227" size="806,45" font="Regular;38" valign="center" />
@@ -2039,6 +2171,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <screen name="LocationBox" position="fill" title="Select Location" flags="wfNoBorder">
     <panel name="PigTemplate" />
     <panel name="KeyMenuTemplate" />
+    <panel name="Weather" />
     <widget name="text" position="780,105" size="1110,40" font="Regular;33" />
     <widget name="target" position="780,150" size="1110,40" valign="center" font="Regular;33" />
     <widget name="filelist" position="780,195" size="1110,310" zPosition="1" scrollbarMode="showOnDemand" selectionDisabled="1" />
@@ -2048,14 +2181,17 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <!-- Parental Control -->
   <screen name="ParentalControlSetup" position="fill" title="Parental control setup" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,105" size="1110,722" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
   </screen>
   <screen name="ParentalControlEditor" position="fill" title="Parental control services Editor" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="servicelist" scrollbarMode="showOnDemand" enableWrapAround="1" position="780,105" size="1110,720" transparent="1" />
   </screen>
   <screen name="PinInput" position="fill" title="Change pin code" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="service" position="780,105" size="1110,40" font="Regular;34" halign="center" />
     <widget name="text" position="780,155" size="1110,35" font="Regular;30" halign="center" />
     <widget name="tries" position="780,200" size="1110,35" font="Regular;30" halign="center" />
@@ -2101,6 +2237,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <!-- Common interface -->
   <screen name="MMIDialog" position="fill">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="title" position="780,105" size="900,38" font="Regular;32" />
     <widget name="subtitle" position="780,145" size="900,38" font="Regular;32" />
     <widget name="entries" position="780,185" size="900,385" itemHeight="35" font="Regular;32" scrollbarMode="showOnDemand" />
@@ -2109,6 +2246,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <!-- Common interface - selection -->
   <screen name="CiSelection" position="fill" title="Common Interface">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="text" position="780,105" size="1100,35" font="Regular;32" />
     <widget name="entries" position="780,160" size="1100,570" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
   </screen>
@@ -2126,11 +2264,13 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <!-- OSD3D Setup -->
   <screen name="OSD3DSetupScreen" position="fill" title="Select Location" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,100" size="1110,855" itemHeight="45" font="Regular;33" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
   <!-- EcmInfo -->
   <screen name="EcmInfoConfigMenu" position="fill" title="Select Location" flags="wfNoBorder">
     <panel name="PigTemplate" />
+    <panel name="Weather" />
     <widget name="config" position="780,100" size="1110,855" itemHeight="45" font="Regular;33" transparent="1" scrollbarMode="showOnDemand" />
   </screen>
   <!-- Standby -->
@@ -2178,34 +2318,34 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y() + (or
   <screen name="MSNWeatherPluginEntriesListConfigScreen" position="537,240" size="845,600">
     <widget render="Label" source="city" position="8,90" size="600,75" font="Regular;30" halign="left" />
     <widget render="Label" source="degreetype" position="635,90" size="195,75" font="Regular;30" halign="left" />
-    <widget name="entrylist" position="12,175" size="825,410" itemHeight="38" font="Regular;28" scrollbarMode="showOnDemand" />
-    <widget render="Label" source="key_red" position="0,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;32" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-    <widget render="Label" source="key_green" position="210,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="green" font="Regular;32" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-    <widget render="Label" source="key_yellow" position="420,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="yellow" font="Regular;32" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-    <widget render="Label" source="key_blue" position="630,15" zPosition="5" size="210,60" valign="center" halign="center" font="Regular;32" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-    <ePixmap position="0,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-    <ePixmap position="210,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-    <ePixmap position="420,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-    <ePixmap position="630,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+    <widget name="entrylist" position="12,175" size="825,410" itemHeight="48" font="Regular;28" scrollbarMode="showOnDemand" />
+    <widget render="Label" source="key_red" position="0,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="background" font="Regular;32" transparent="1" foregroundColor="white" borderWidth="1" />
+    <widget render="Label" source="key_green" position="210,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="black" font="Regular;32" transparent="1" foregroundColor="white" borderWidth="1" />
+    <widget render="Label" source="key_yellow" position="420,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="black" font="Regular;32" transparent="1" foregroundColor="white" borderWidth="1" />
+    <widget render="Label" source="key_blue" position="630,15" zPosition="5" size="210,60" valign="center" halign="center" font="Regular;32" transparent="1" foregroundColor="white" borderWidth="1" />
+    <ePixmap position="0,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="blend" />
+    <ePixmap position="210,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="blend" />
+    <ePixmap position="420,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="blend" />
+    <ePixmap position="630,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="blend" />
   </screen>
   <screen name="MSNWeatherPluginEntryConfigScreen" position="center,center" size="845,600">
     <widget name="config" position="30,120" size="780,450" scrollbarMode="showOnDemand" font="Regular;28" itemHeight="38" />
-    <ePixmap position="0,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-    <ePixmap position="210,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-    <ePixmap position="630,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-    <ePixmap position="420,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-    <widget source="key_red" render="Label" position="0,15" zPosition="5" size="210,60" valign="center" halign="center" font="Regular;32" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-    <widget source="key_green" render="Label" position="210,15" zPosition="5" size="210,60" valign="center" halign="center" font="Regular;32" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-    <widget render="Label" source="key_yellow" position="420,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="yellow" font="Regular;32" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-    <widget source="key_blue" render="Label" position="630,15" zPosition="5" size="210,60" valign="center" halign="center" font="Regular;32" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+    <ePixmap position="0,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="blend" />
+    <ePixmap position="210,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="blend" />
+    <ePixmap position="630,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="blend" />
+    <ePixmap position="420,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="blend" />
+    <widget source="key_red" render="Label" position="0,15" zPosition="5" size="210,60" valign="center" halign="center" font="Regular;32" transparent="1" foregroundColor="white" borderWidth="1" />
+    <widget source="key_green" render="Label" position="210,15" zPosition="5" size="210,60" valign="center" halign="center" font="Regular;32" transparent="1" foregroundColor="white" borderWidth="1" />
+    <widget render="Label" source="key_yellow" position="420,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="background" font="Regular;32" transparent="1" foregroundColor="white" borderWidth="1" />
+    <widget source="key_blue" render="Label" position="630,15" zPosition="5" size="210,60" valign="center" halign="center" font="Regular;32" transparent="1" foregroundColor="white" borderWidth="1" />
   </screen>
   <screen name="MSNWeatherPluginSearch" position="center,center" size="845,600">
-    <widget name="entrylist" position="12,120" size="825,300" itemHeight="48" font="Regular;28" scrollbarMode="showOnDemand" />
-    <widget render="Label" source="key_red" position="0,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;32" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-    <widget render="Label" source="key_green" position="210,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="green" font="Regular;32" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-    <ePixmap position="0,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-    <ePixmap position="210,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-    <ePixmap position="420,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-    <ePixmap position="630,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+    <widget name="entrylist" position="12,120" size="825,300" itemHeight="52" font="Regular;28" scrollbarMode="showOnDemand" />
+    <widget render="Label" source="key_red" position="0,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="background" font="Regular;32" transparent="1" foregroundColor="white" borderWidth="1" />
+    <widget render="Label" source="key_green" position="210,15" size="210,60" zPosition="5" valign="center" halign="center" backgroundColor="background" font="Regular;32" transparent="1" foregroundColor="white" borderWidth="1" />
+    <ePixmap position="0,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="blend" />
+    <ePixmap position="210,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="blend" />
+    <ePixmap position="420,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="blend" />
+    <ePixmap position="630,15" zPosition="4" size="210,60" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="blend" />
   </screen>
 </skin>
