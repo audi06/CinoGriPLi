@@ -114,7 +114,7 @@ class cnExtraInfo(Converter, object):
 				if (levelIndex is not -1):
 					expertString = (((expertString + " ") + "L:") + fileString[(levelIndex + 4)])
 		except:
-			print "Infobar"
+			print("Infobar")
 		return expertString
 
 	def isGParameter(self, boxId, caId):
@@ -398,7 +398,7 @@ class cnExtraInfo(Converter, object):
 			return self.getTransponderType(info)
 		elif (self.type == self.SID):
 			sidValue = info.getInfo(iServiceInformation.sSID)
- 			if not sidValue:
+			if not sidValue:
 				return ""
 			return "%0.4X" % int(sidValue)
 

@@ -45,15 +45,15 @@ class cnBoxInfo(Poll, Converter, object):
 		if type == "BoxType":
 			self.type = self.BOXTYPE
 			self.poll_enabled = False
- 		elif type == "LoadAverage":
+		elif type == "LoadAverage":
 			self.type = self.LOAD
- 		elif type == "MemInfo":
+		elif type == "MemInfo":
 			self.type = self.MEMINFO
- 		elif type == "FreeFlash":
+		elif type == "FreeFlash":
 			self.type = self.FREEFLASH
- 		elif type == "TempSensor":
+		elif type == "TempSensor":
 			self.type = self.TEMPSENSOR
- 		elif type == "Uptime":
+		elif type == "Uptime":
 			self.type = self.UPTIME
 		elif type == "FanInfo":
 			self.type = self.FAN			
@@ -126,13 +126,13 @@ class cnBoxInfo(Poll, Converter, object):
 			return "Uptime: %s" % uptime
 
 	def getTempSensor(self):
-	 	if not "dm7020hd" in HardwareInfo().get_device_name():	
+		if not "dm7020hd" in HardwareInfo().get_device_name():
 			try:
 				sensor_info = sensors.getSensorsList(sensors.TYPE_TEMPERATURE)
 			except:
 				return "Temp: N/A"
 				sensor_info = None
-			if sensor_info is not None:			
+			if sensor_info is not None:
 				if len(sensor_info) > 0:
 					return "Temp: %s°C" % sensors.getSensorValue(sensor_info[0])
 		return "Temp: No Sensor"

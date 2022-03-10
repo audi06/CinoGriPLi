@@ -342,11 +342,11 @@ class cnServiceInfo(Poll, Converter, object):
 				return True
 		elif self.type == self.IS_SATELLITE_S:
 			if type == 'DVB-S' and service.streamed() is None:
-				if self.tpdata.get('system', 0) is 0:
+				if self.tpdata.get('system', 0) == 0:
 					return True
 		elif self.type == self.IS_SATELLITE_S2:
 			if type == 'DVB-S' and service.streamed() is None:
-				if self.tpdata.get('system', 0) is 1:
+				if self.tpdata.get('system', 0) == 1:
 					return True
 		return False
 	boolean = property(getBoolean)
