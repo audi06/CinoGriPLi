@@ -553,7 +553,7 @@ class cnServiceName(Converter, object):
 					tmpprov = self.getProviderName(ref)
 				else: 
 					tmpprov = info.getInfoString(iServiceInformation.sProvider) or ''
-			if '' is tmpprov or 'Unknown' in tmpprov:
+			if '' == tmpprov or 'Unknown' in tmpprov:
 				if self.refstr:
 					tmpref = self.refstr
 				else:
@@ -561,7 +561,7 @@ class cnServiceName(Converter, object):
 				for i in range(len(searchpath)):
 					if os.path.isfile('%s%s' % (searchpath[i], refname)):
 						refpath = '%s%s' % (searchpath[i], refname)
-				if not '' is refpath:
+				if '' != refpath:
 					tmpref = ':'.join(tmpref.split(':')[:10])
 					reffile = open(refpath, 'r').read()
 					if not reffile.endswith('\r\n\r\n'):
@@ -648,7 +648,7 @@ class cnServiceName(Converter, object):
 							tmpprov = self.getProviderName(ref)
 						else: 
 							tmpprov = info.getInfoString(iServiceInformation.sProvider) or ''
-					if '' is tmpprov or 'Unknown' in tmpprov:
+					if '' == tmpprov or 'Unknown' in tmpprov:
 						if self.refstr:
 							tmpref = self.refstr
 						else:
@@ -656,7 +656,7 @@ class cnServiceName(Converter, object):
 						for i in range(len(searchpath)):
 							if os.path.isfile('%s%s' % (searchpath[i], refname)):
 								refpath = '%s%s' % (searchpath[i], refname)
-						if not '' is refpath:
+						if '' != refpath:
 							tmpref = ':'.join(tmpref.split(':')[:10])
 							reffile = open(refpath, 'r').read()
 							if not reffile.endswith('\r\n\r\n'):
