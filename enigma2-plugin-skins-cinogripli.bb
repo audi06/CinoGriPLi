@@ -11,7 +11,7 @@ inherit gitpkgv allarch
 PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
 
-RRECOMMENDS_${PN} = "enigma2-plugin-extensions-weatherplugin"
+RRECOMMENDS:${PN} = "enigma2-plugin-extensions-weatherplugin"
 
 SRC_URI = "git://github.com/audi06/CinoGriPLi.git;protocol=git"
 

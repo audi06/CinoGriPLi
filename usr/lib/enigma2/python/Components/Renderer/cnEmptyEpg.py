@@ -1,25 +1,10 @@
-#######################################################################
-#
-#    Renderer for Enigma2
-#    Coded by shamann (c)2017
-#
-#    This program is free software; you can redistribute it and/or
-#    modify it under the terms of the GNU General Public License
-#    as published by the Free Software Foundation; either version 2
-#    of the License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#    
-#######################################################################
-
-from Renderer import Renderer
-from enigma import eLabel, eTimer, eSize
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+from Components.Renderer.Renderer import Renderer
+from enigma import eLabel, eTimer
 from Components.VariableText import VariableText
 from Components.config import config
-from skin import parseFont
+
 
 class cnEmptyEpg(VariableText, Renderer):
 
@@ -29,44 +14,30 @@ class cnEmptyEpg(VariableText, Renderer):
 		self.EmptyText = ""
 		self.fillTimer = eTimer()
 		try:
-			self.fillTimer_conn = self.fillTimer.timeout.connect(self.__fillText)
-		except AttributeError:
 			self.fillTimer.timeout.get().append(self.__fillText)
+		except:
+			self.fillTimer_conn = self.fillTimer.timeout.connect(self.__fillText)
 		self.backText = ""
-		self.vvv = ""
-		self.testSizeLabel = None 
-    		
+
 	def applySkin(self, desktop, parent):
-		attribs = [ ]
+		attribs = []
 		for (attrib, value) in self.skinAttributes:
 			if attrib == "size":
 				self.sizeX = int(value.strip().split(",")[0])
-				attribs.append((attrib,value))
+				attribs.append((attrib, value))
 			elif attrib == "emptyText":
 				self.EmptyText = value
-			elif attrib == "font":
-				self.used_font = parseFont(value, ((1,1),(1,1)))
-				attribs.append((attrib,value))
 			else:
-				attribs.append((attrib,value))
+				attribs.append((attrib, value))
 		self.skinAttributes = attribs
-		self.testSizeLabel.setFont(self.used_font)
-		self.testSizeLabel.resize(eSize(self.sizeX+500,20))
-		self.testSizeLabel.setVAlign(eLabel.alignTop)
-		self.testSizeLabel.setHAlign(eLabel.alignLeft)
-		self.testSizeLabel.setNoWrap(1)
-		try:
-			from Plugins.Extensions.setupGlass17.txt import E_EPG
-			self.EmptyText = E_EPG
-		except: pass
 		return Renderer.applySkin(self, desktop, parent)
-		
+
 	GUI_WIDGET = eLabel
 
 	def connect(self, source):
 		Renderer.connect(self, source)
 		self.changed((self.CHANGED_DEFAULT,))
-		
+
 	def changed(self, what):
 		if what[0] == self.CHANGED_CLEAR:
 			self.text = ""
@@ -75,31 +46,27 @@ class cnEmptyEpg(VariableText, Renderer):
 			if self.instance and self.backText != self.text:
 				if self.text == "":
 					self.text = self.EmptyText
-				tmp = self.text
-				self.testSizeLabel.setText(tmp)
-				text_width = self.testSizeLabel.calculateSize().width()
-				if text_width > (self.sizeX - 30):
-					while (text_width > (self.sizeX - 30)):
-						tmp = tmp[:-1] 
-						self.testSizeLabel.setText(tmp)
-						text_width = self.testSizeLabel.calculateSize().width()
-					pos = tmp.rfind(' ')
-					if pos != -1:
-						tmp = tmp[:pos].rstrip(' ') + "..."
-					self.text = tmp
+				text_width = self.instance.calculateSize().width()
+				if text_width > self.sizeX:
+					while (text_width > self.sizeX):
+						self.text = self.text[:-1]
+						text_width = self.instance.calculateSize().width()
+					self.text = self.text[:-3] + "..."
 				if self.backText != self.text:
-					self.backText = self.text					
+					self.backText = self.text
 					ena = True
-					try: ena = config.plugins.setupGlass17.par30.value
-					except: pass
+					try:
+						ena = config.plugins.setupGlass16.par30.value
+					except:
+						pass
 					if ena:
-						self.text = "_"				
+						self.text = "_"
 						self.endPoint = len(self.backText)
-						self.posIdx = 0                    
+						self.posIdx = 0
 						if self.fillTimer.isActive():
 							self.fillTimer.stop()
-						self.fillTimer.start(1300, True) 					
-					
+						self.fillTimer.start(1300, True)
+
 	def __fillText(self):
 		self.fillTimer.stop()
 		self.posIdx += 1
@@ -107,12 +74,4 @@ class cnEmptyEpg(VariableText, Renderer):
 			self.text = self.backText[:self.posIdx] + "_"
 			self.fillTimer.start(50, True)
 		else:
-			self.text = self.backText 					
-					
-	def preWidgetRemove(self, instance):
-		self.testSizeLabel = None
-
-	def postWidgetCreate(self, instance):
-		self.testSizeLabel = eLabel(instance)
-		self.testSizeLabel.hide()
-		
+			self.text = self.backText
